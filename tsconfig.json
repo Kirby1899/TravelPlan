@@ -24,8 +24,10 @@
     }
   },
   "include": [
+    "src/home",
     "src",
     "next-env.d.ts",
+    "src/**/*",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
