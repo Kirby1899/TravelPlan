@@ -35,17 +35,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## CHAT GPT PROMPT
 
-3 day trip to barcelona.
-response should be in json format:
-D1:
-A1: activity name, duration (24 hour format-24 hour format), coordinates for the location of the activity.
-A2: activity name, duration (24 hour format-24 hour format), coordinates for the location of the activity.
-A3: ...
-D1:
-A1: activity name, duration (24 hour format-24 hour format), coordinates for the location of the activity.
-A2: activity name, duration (24 hour format-24 hour format), coordinates for the location of the activity.
-...
-D3:
-A1: activity name, duration (24 hour format-24 hour format), coordinates for the location of the activity.
-A2: activity name, duration (24 hour format-24 hour format), coordinates for the location of the activity.
-A3: ...
+3 day trip to barcelona. 
+response should be in json format (an array of 3 day arrays with 3 activity objects) only add answers where it says answer and they should have the format stated inside the parenthesis, when choosing activities try and include the most known ones of the city: 
+[[{"activity name": answer,"duration": answer(24 hour format-24 hour format), "address": answer(for the location of the activity) },{"activity name": answer,"duration": answer(24 hour format-24 hour format), "address": answer(for the location of the activity) },{"activity name": answer,"duration": answer(24 hour format-24 hour format),"address": answer(for the location of the activity)}],[{"activity name": answer,"duration": answer(24 hour format-24 hour format),"address": answer(for the location of the activity)},{"activity name": answer,"duration": answer(24 hour format-24 hour format),"address": answer(for the location of the activity) },{"activity name": answer,"duration": answer(24 hour format-24 hour format), "address": answer(for the location of the activity) }],[{"activity name": answer,"duration": answer(24 hour format-24 hour format),"address": answer(for the location of the activity)},{"activity name": answer,"duration": answer(24 hour format-24 hour format),"address": answer(for the location of the activity)},{"activity name": answer,"duration": answer(24 hour format-24 hour format),"address": answer(for the location of the activity)}]]

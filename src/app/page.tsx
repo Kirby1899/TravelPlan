@@ -2,8 +2,10 @@
 
 import { resultData, searchData } from '@/types'
 import { useState } from 'react'
+import ExactLocation from './api/ExactLocation'
 
 export default function Home() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [data, setData] = useState<searchData>({})
   const [result, setResult] = useState<resultData>([])
 
@@ -20,17 +22,28 @@ export default function Home() {
     <>
       {result.length > 0 ? (
         <>
-          {result.map((data) => {
-            return data.map((activity) => {
+          <div className="max-w-2xl p-6 bg-white border border-gray-200 shadow mb-2 rounded-xl">
+            {result.map((data, i) => {
               return (
-                <>
-                  <div>{activity['Activity Name']}</div>
-                  <div>{activity.Duration}</div>
-                  <div>{activity.Coordinates}</div>
-                </>
+                <div
+                  key={i}
+                  className="divide-y max-w-2xl p-6 bg-white border border-gray-200 shadow mb-2 rounded-xl"
+                >
+                  <h1 className="font-bold text-xl">Day {i + 1}</h1>
+                  {data.map((activity) => {
+                    return (
+                      <div key={i}>
+                        <div>{activity['activity name']}</div>
+                        <div>{activity.duration}</div>
+                        {/* <div>{activity.address}</div> */}
+                        <ExactLocation address={activity.address} />
+                      </div>
+                    )
+                  })}
+                </div>
               )
-            })
-          })}
+            })}
+          </div>
         </>
       ) : (
         <div className="bg-cover h-screen bg-[url(https://www.gannett-cdn.com/presto/2022/01/27/USAT/48e9bfdf-d556-436b-b04a-94bbb350cae9-GettyImages-482612302.jpg?crop=2886%2C1624%2Cx0%2Cy247&width=1200)] flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">

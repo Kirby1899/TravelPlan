@@ -8,7 +8,11 @@ export type resultData = day[]
 export type day = activity[]
 
 export type activity = {
-  'Activity Name': string
-  Duration: string
-  Coordinates: string
+  'activity name': string
+  duration: string
+  address: string
+}
+
+export type ExactLocationProps = {
+  address: string
 }
