@@ -1,0 +1,55 @@
+[
+  [
+    {
+      "Activity Name": "Visit Casa Mila",
+      "Duration": "06:00-07:00",
+      "Coordinates": "41.3930390, 2.1557059"
+    },
+    {
+      "Activity Name": "Stroll down Las Ramblas",
+      "Duration": "07:00-08:00",
+      "Coordinates": "41.3865313, 2.1707250"
+    },
+    {
+      "Activity Name": "Visit Sagrada Familia",
+      "Duration": "08:00-10:00",
+      "Coordinates": "41.4036853, 2.1742000"
+    }
+  ],
+
+  [
+    {
+      "Activity Name": "Visit Montjuic Castle",
+      "Duration": "10:00-11:00",
+      "Coordinates": "41.3643750, 2.1618914"
+    },
+    {
+      "Activity Name": "Visit Park Guell",
+      "Duration": "11:00-13:00",
+      "Coordinates": "41.4141883, 2.1550854"
+    },
+    {
+      "Activity Name": "Visit La Boqueria",
+      "Duration": "13:00-15:00",
+      "Coordinates": "41.3794210, 2.1712045"
+    }
+  ],
+
+  [
+    {
+      "Activity Name": "Go Shopping at Placa de Catllunya",
+      "Duration": "15:00-16:00",
+      "Coordinates": "41.3876457, 2.1683259"
+    },
+    {
+      "Activity Name": "Visit Picasso Museum",
+      "Duration": "16:00-18:00",
+      "Coordinates": "41.3831799, 2.1790447"
+    },
+    {
+      "Activity Name": "Enjoy Paella on the Beach",
+      "Duration": "18:00-20:00",
+      "Coordinates": "41.3859095, 2.1989278"
+    }
+  ]
+]
