@@ -1,13 +1,13 @@
-export type searchData = {
+export type SearchData = {
   location?: string
   duration?: string
 }
 
-export type resultData = day[]
+export type ResultData = Day[]
 
-export type day = activity[]
+export type Day = Activity[]
 
-export type activity = {
+export type Activity = {
   'activity name': string
   duration: string
   address: string

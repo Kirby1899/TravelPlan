@@ -1,13 +1,15 @@
 'use client'
 
-import { resultData, searchData } from '@/types'
+import { ResultData, SearchData } from '@/types'
 import { useState } from 'react'
 import ExactLocation from './api/ExactLocation'
+import Map from './api/Map'
+import mock from './api/mock.json'
 
 export default function Home() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [data, setData] = useState<searchData>({})
-  const [result, setResult] = useState<resultData>([])
+  const [data, setData] = useState<SearchData>({})
+  const [result, setResult] = useState<ResultData>([])
 
   const search = async () => {
     const result = await fetch('http://localhost:3000/api')
@@ -15,24 +17,22 @@ export default function Home() {
     const data = await result.json()
 
     setResult(data)
-    console.log(data)
   }
-
   return (
-    <>
+    <div className="flex flex-col md:flex-row">
       {result.length > 0 ? (
         <>
           <div className="max-w-2xl p-6 bg-white border border-gray-200 shadow mb-2 rounded-xl">
             {result.map((data, i) => {
               return (
                 <div
-                  key={i}
+                  key={`result-${i}`}
                   className="divide-y max-w-2xl p-6 bg-white border border-gray-200 shadow mb-2 rounded-xl"
                 >
                   <h1 className="font-bold text-xl">Day {i + 1}</h1>
-                  {data.map((activity) => {
+                  {data.map((activity, index) => {
                     return (
-                      <div key={i}>
+                      <div key={`result-${i}-day-${index}`}>
                         <div>{activity['activity name']}</div>
                         <div>{activity.duration}</div>
                         {/* <div>{activity.address}</div> */}
@@ -43,6 +43,13 @@ export default function Home() {
                 </div>
               )
             })}
+          </div>
+          <div className="flex-grow">
+            <Map
+              activities={mock.reduce((acc, day) => {
+                return [...acc, ...day]
+              }, [])}
+            />
           </div>
         </>
       ) : (
@@ -68,7 +75,7 @@ export default function Home() {
                 <div className="mt-3">
                   <input
                     onChange={(e) => {
-                      setData((prev: searchData) => {
+                      setData((prev: SearchData) => {
                         return { ...prev, destination: e.target.value }
                       })
                     }}
@@ -94,7 +101,7 @@ export default function Home() {
                 <div className="mt-2">
                   <input
                     onChange={(e) => {
-                      setData((prev: searchData) => {
+                      setData((prev: SearchData) => {
                         return { ...prev, duration: e.target.value }
                       })
                     }}
@@ -130,6 +137,6 @@ export default function Home() {
           </div>
         </div>
       )}
-    </>
+    </div>
   )
 }
