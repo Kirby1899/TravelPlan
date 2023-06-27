@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predev": "docker-compose up -d",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -12,6 +11,7 @@
   },
   "dependencies": {
     "@prisma/client": "4.16.1",
+    "@react-google-maps/api": "^2.18.1",
     "@types/node": "20.3.1",
     "@types/react": "18.2.13",
     "@types/react-dom": "18.2.6",
